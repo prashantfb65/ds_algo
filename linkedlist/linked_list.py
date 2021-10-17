@@ -58,7 +58,12 @@ class LinkedList:
         for el in elements:
             self.insert(el, front)
         
-
-
-    
+    def reverse(self):
+        previous = None
+        while self.head:
+            temp = self.head
+            self.head = self.head.next
+            temp.next = previous
+            previous = temp 
+        self.head = previous   
     
